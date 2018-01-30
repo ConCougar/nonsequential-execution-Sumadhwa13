@@ -1,8 +1,8 @@
 // Allen ISD Computer Science Assignment
 // Non-sequential Project | multiplicationTable
-// John Williams
-// Computer Science I, Period 1
-// 2018.01.23
+// Sumadhwa Guruprasad
+// Computer Science I, Period 2
+// 2018.01.26
 
 
 /*
@@ -23,10 +23,56 @@
       6
       9
      12
+ Include an assert statement for each assumption that you are making.
+ */
+assert(CommandLine.arguments.count == 2, "Exactly one argument is required")
+assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
+//Continue with your code here
 
-  Include an assert statement for each assumption that you are making.
+let tableSize = Int(CommandLine.arguments[1])! //this determines the size of the multiplication table
+var rows = 0
+var columns = 0
 
-*/
+assert(tableSize <= 20)
 
-// Continue with your code here
+print(terminator:"    ")
+for rows in 1...tableSize {
+    
+    if (rows < 10) {
+        print("   \(rows)", terminator:"")
+    }
+    else {
+        print("  \(rows)", terminator:"")
+    }
 
+}
+print("")
+
+for columns in 1...tableSize {
+    if (columns < 10) {
+        print("   \(columns)", terminator:"")
+    }
+    else {
+        print("  \(columns)", terminator:"")
+
+    }
+
+        
+
+for rows in 1...tableSize {
+    let times = rows * columns
+    if(times < 10) {
+        print("   \(times)", terminator:"")
+    }
+    else if (times > 9 && times < 100) {
+        print("  \(times)", terminator:"")
+    }
+    else {
+        print(" \(times)", terminator:"")
+        
+    }
+}
+
+print("")
+
+}

@@ -1,8 +1,8 @@
 // Allen ISD Computer Science Assignment
 // Non-sequential Project | simpleATM
-// John Williams
-// Computer Science I, Period 1
-// 2018.01.23
+// Sumadhwa Guruprasad
+// Computer Science I, Period 2
+// 2018.01.26
 
 
 /*
@@ -30,11 +30,18 @@ assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
 
 // Read the integer value from the command line.
 // Note that we've verified above, via the assertions, that we definitely have an integer argument
-let dollarValueRequested = Int(CommandLine.arguments[1])!
-assert(dollarValueRequested % 20 == 0, "Dollar value requested must be evenly divisible by $20.00")
+let dollar = Int(CommandLine.arguments[1])!
+assert(dollar % 20 == 0, "Dollar value requested must be evenly divisible by $20.00")
 
 // We can use string interpolation to display a single string with substituted values
-print("ATM will now dispense $20.00 bills to deliver the sum of $\(dollarValueRequested).00")
+print("ATM will now dispense $20.00 bills to deliver the sum of $\(dollar).00")
 
-// Continue with your code here
+// Continue with your code here/
+
+if (dollar % 20 == 0) {
+    let twenties = (dollar / 20)
+    for _ in 0..<twenties {
+        print("$20.00 dispensed")
+    }
+}
 

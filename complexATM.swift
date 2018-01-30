@@ -1,8 +1,8 @@
 // Allen ISD Computer Science Assignment
 // Non-sequential Project | complexATM
-// John Williams
-// Computer Science I, Period 1
-// 2018.01.23
+// Sumadhwa Guruprasad
+// Computer Science I, Period 2
+// 2018.01.26
 
 
 /*
@@ -25,6 +25,27 @@
 
   Include an assert statement for each assumption that you are making.
 */
+assert(CommandLine.arguments.count == 2, "Exactly one argument is required")
+assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
 
 // Continue with your code here
 
+var dollar = Int(CommandLine.arguments[1])!
+assert(dollar % 5 == 0, "Dollar value must be evenly divisible by $20.00 and $5.00")
+
+print("ATM will now dispense $20.00 bills and $5.00 bills to deliver the sum of $\(dollar).00")
+
+if (dollar % 5 == 0) {
+    let twenties = Int(dollar / 20)
+    dollar = dollar - (twenties * 20)
+    for _ in 0..<twenties {
+        print("$20.00 dispensed")
+    }
+    if (dollar % 5 == 0) {
+        let fives = Int(dollar / 5)
+        for _ in 0..<fives {
+            print("$5.00 dispensed")
+        }
+    }
+}
+        
