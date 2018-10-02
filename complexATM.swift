@@ -30,13 +30,13 @@ assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
 
 // Continue with your code here
 
-var dollarAmount = Int(CommandLine.arguments[1])!
+//var dollarAmount = Int(CommandLine.arguments[1])!
 assert(dollarAmount % 5 == 0, "Dollar value must be evenly divisible by $100.00, $20.00, and $5.00")
 
 print("ATM will now dispense $100.00 bills, $20.00 bills, and $5.00 bills to deliver the sum of $\(dollarAmount).00")
 
 func billDispenser(amount:Int, denomination:Int) -> Int {
-    
+    var dollarAmount = amount
     let amountOfBills = Int(dollarAmount / denomination)
     for _ in 0..<amountOfBills {
         print("$\(denomination).00 dispensed")
@@ -49,18 +49,4 @@ dollarAmount = billDispenser(amount:dollarAmount, denomination:100)
 dollarAmount = billDispenser(amount:dollarAmount, denomination:20)
 dollarAmount = billDispenser(amount:dollarAmount, denomination:5)
 
-    
-/* if (dollar % 5 == 0) {
-    let twenties = Int(dollar / 20)
-    dollar = dollar - (twenties * 20)
-    for _ in 0..<twenties {
-        print("$20.00 dispensed")
-    }
-    if (dollar % 5 == 0) {
-        let fives = Int(dollar / 5)
-        for _ in 0..<fives {
-            print("$5.00 dispensed")
-        }
-    }
-} */
         
